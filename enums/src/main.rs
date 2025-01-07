@@ -1,3 +1,4 @@
+#![allow(unused)]
 // enum IpAddrKind{
 //     V4,
 //     V6,
@@ -39,6 +40,7 @@
 fn main() {
     enum IpAddr {
         V4(String),
+        //V4(u8, u8, u8, u8), this is also valid in the enum but it is not in the struct
         V6(String),
     }
     let home = IpAddr::V4(String::from("127.0.0.1"));
