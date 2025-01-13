@@ -1,4 +1,4 @@
-mod front_of_house { // we should use the mod to declare a module
+pub mod front_of_house { // we should use the mod to declare a module
     // and we should use the pub mod to make the module public
     pub mod hosting {
         pub fn add_to_waitlist() {
