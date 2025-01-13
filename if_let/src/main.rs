@@ -14,7 +14,7 @@ fn main() {
         println!("The maximum is configured to be {max}");
     }
 }
-
+//here it wont work it is the snippit of the another code block 
 fn main() {
     let mut count = 0;
     // match coint {
