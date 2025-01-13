@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 fn serve_customer() {
     println!("Serving customer...");
 }
