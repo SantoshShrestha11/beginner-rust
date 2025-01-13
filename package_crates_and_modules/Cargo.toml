@@ -1,0 +1,9 @@
+[package]
+name = "package_crates_and_modules"
+version = "0.1.0"
+edition = "2021"
+
+#setting the default binary crate to run 
+default-run = "package_crates_and_modules"
+
+[dependencies]
