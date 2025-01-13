@@ -39,15 +39,15 @@ mod front_of_house {
 }
 
 mod back_of_house {
-    pub struct Breakfact {
+    pub struct Breakfast {
         pub toast: String,
         seasonal_fruit: String,
     }
 
     impl Breakfact {
         //public associated funciton to construct a breakfast instance
-        pub fn summer(toast: &str)-> breakfast {
-            breakfast {
+        pub fn summer(toast: &str)-> Breakfast {
+            Breakfast {
                 toast: String::from(toast),
                 seasonal_fruit: String::from("peaches"),
             }
@@ -68,7 +68,7 @@ pub fn eat_at_resturant() {
     front_of_house::serve();
 
     //using a public struct with a private field
-    let mut meal = back_of_house::breakfast::summer("Rye");
+    let mut meal = back_of_house::Breakfast::seasonal_fruit("Rye");
     meal.toast = String::from("wheat"); //allowed
     println!("I'd like {} toast, please.", meal.toast);
 
