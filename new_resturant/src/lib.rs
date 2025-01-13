@@ -18,7 +18,7 @@ mod front_of_house {
         }
 
         fn serve_order() {
-            println!("Srving order");
+            println!("Serving order");
         }
 
         pub fn take_payment() {
@@ -27,7 +27,7 @@ mod front_of_house {
 
         pub fn notify_parent() {
             super::serve_customer();
-        }//using teh super to call a function from the parent module
+        } // using the super to call a function from the parent module
     }
     
     pub fn serve() {
@@ -44,9 +44,9 @@ mod back_of_house {
         seasonal_fruit: String,
     }
 
-    impl Breakfact {
-        //public associated funciton to construct a breakfast instance
-        pub fn summer(toast: &str)-> Breakfast {
+    impl Breakfast {
+        // public associated function to construct a breakfast instance
+        pub fn summer(toast: &str) -> Breakfast {
             Breakfast {
                 toast: String::from(toast),
                 seasonal_fruit: String::from("peaches"),
@@ -59,33 +59,30 @@ mod back_of_house {
         Salad,
     }
 }
-// A public funciton using all components
-pub fn eat_at_resturant() {
-    //absolute path
-    crate::front_of_house::hosting::add_to_waitlist():
 
-    //relative path
+// A public function using all components
+pub fn eat_at_restaurant() {
+    // absolute path
+    crate::front_of_house::hosting::add_to_waitlist();
+
+    // relative path
     front_of_house::serve();
 
-    //using a public struct with a private field
-    let mut meal = back_of_house::Breakfast::seasonal_fruit("Rye");
-    meal.toast = String::from("wheat"); //allowed
+    // using a public struct with a private field
+    let mut meal = back_of_house::Breakfast::summer("Rye");
+    meal.toast = String::from("wheat"); // allowed
     println!("I'd like {} toast, please.", meal.toast);
 
-    //uncommenting the line below will caue a complicaton error because,
-    //'seasonal_fruit' is private
-    //mean.seasonal_fruit = String::from("blueberries");
+    // Uncommenting the line below will cause a compilation error because
+    // 'seasonal_fruit' is private
+    // meal.seasonal_fruit = String::from("blueberries");
 
-    //using a public enum
+    // using a public enum
     let order1 = back_of_house::Appetizer::Soup;
     let order2 = back_of_house::Appetizer::Salad;
 
-    match order1{
-        back_of_house::Appetizer::Soup => println!("Ordered soup");
-        back_of_house::Appetizer::Salad => println!("Ordered salad");
+    match order1 {
+        back_of_house::Appetizer::Soup => println!("Ordered soup"),
+        back_of_house::Appetizer::Salad => println!("Ordered salad"),
     }
-
 }
-
-
-
