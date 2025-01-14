@@ -6,7 +6,7 @@ mod fornt_of_house {
 }
 
 #[allow(dead_code)]
-pub mod customer {
+mod customer {
 use crate::fornt_of_house::hosting;
     pub fn eat_at_restaurant() {
         hosting::add_to_waitlist();
