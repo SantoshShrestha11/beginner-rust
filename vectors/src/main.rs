@@ -47,7 +47,7 @@ fn main() {
 
     //iterating over a vector immutably
     println!("Scores:");
-    for scores in &scores{
+    for score in &scores{
         println!("{score}");
     }
 
