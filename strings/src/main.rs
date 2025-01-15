@@ -36,5 +36,22 @@ fn main() {
     let result = format!("{s7}-{s8}-{s9}");
     println!("Using format! macro: {}", result);
 
-    //
+    //UTF-8 internal representation and lsicing 
+    let hindi = "नमस्ते";
+    println!("UTF-8 bytes: {:?}", hindi.as_bytes());
+    println!("unixode scalar values: {:?}", hindi.chars().collect::<vec<_>>());
+
+    //slicing a valid porting of a UTF-8 string
+    let slice = &hindi[0..6];//"नम"
+    println!("Sliced string: {}", slice);
+
+    //handeling potentioal runtime errrors in slicing
+    //uncommenting the line below will panic at runtime
+    //let invalid_slice = &hindi[0..1];
+
+    if let Some(first_char) = hindi.chars().nth(0) {
+        println!("First character: {}", first_char);
+    } else {
+        println!("No first character found.");
+    }
 }
