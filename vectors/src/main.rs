@@ -8,7 +8,7 @@ enum SpreadsheetCell {
 
 fn main() {
     //creating a new empty vector and adding elements using the push 
-    let mut numbers = Vect::new();
+    let mut numbers = Vec::new();
     numbers.push(10);
     numbers.push(31);
     numbers.push(32);
