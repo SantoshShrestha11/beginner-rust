@@ -66,7 +66,7 @@ fn main() {
 
     for cell in &row {
         match cell {
-            SpreadsheetCell::Int(vallue) => print!("Int: {value}"),
+            SpreadsheetCell::Int(value) => print!("Int: {value}"),
             SpreadsheetCell::Float(value) => println!("Float: {value}"),
             SpreadsheetCell::Text(value) => print!("Text: {value}"),
         }
