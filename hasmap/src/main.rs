@@ -32,12 +32,12 @@ fn main() {
 
     // updating scores
     scores.insert(String::from("Blue"), 25); //that will simply over wirte
-    scores.entry(String::form("Green")).or_insert(40); // adds value and key if it is not there ,
+    scores.entry(String::from("Green")).or_insert(40); // adds value and key if it is not there ,
     // and if it is there the key then it will leave it as it is helce the value is unchanged 
     // here there is not any Green key so it will just create a key Green and put the values of it
     // as 40
 
-    for (team, score) in &socres {
+    for (team, score) in &scores {
         println!("{team}: {score}");
     }
 
@@ -59,15 +59,15 @@ fn main() {
 
     println!("\n Employees in Engineering:");
     if let Some(employees) = company.get("Engineering") {
-        println!("{:?}, employees");
+        println!("{:?}", employees);
     } else {
         println!("No employees found in Engineering.");
     }
 
 }
-fn add_employee(company: &mut HashMap<String, Vec<Stirng>>, name: &str, department: &str) {
+fn add_employee(company: &mut HashMap<String, Vec<String>>, name: &str, department: &str) {
     company
-        .entry(String::form(department))
+        .entry(String::from(department))
         .or_insert_with(Vec::new)
-        .push(String::form(name));
+        .push(String::from(name));
 }
