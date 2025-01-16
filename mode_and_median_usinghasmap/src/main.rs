@@ -12,7 +12,9 @@ fn find_median_and_mode(mut integers: Vec<i32>) -> (f64, i32) {
             let mid2 = integers[even / 2];
             (mid1 as f64 + mid2 as f64) / 2.0
         },
-        odd => integers[integers.len() / 2] as f64, 
+        odd if odd % 2 != 0 => {
+            integers[odd / 2] as f64
+        },
     };
 
     // Calculating the mode using a HashMap
@@ -25,7 +27,7 @@ fn find_median_and_mode(mut integers: Vec<i32>) -> (f64, i32) {
     let mut max_count = 0;
     for (&integer, &count) in &frequencies {
         if count > max_count {
-            mode = *integer;
+            mode = integer;
             max_count = count;
         }
     }
@@ -34,7 +36,7 @@ fn find_median_and_mode(mut integers: Vec<i32>) -> (f64, i32) {
 }
 
 fn main() {
-    let integers = vec![1, 2, 3, 1, 2, 31, 1, 34, 4, 5];
+    let integers = vec![1, 2, 3, 1, 2, 31, 1, 34, 4, 5,1];
     let (median, mode) = find_median_and_mode(integers);
     println!("Median: {}", median);
     println!("Mode: {}", mode);
