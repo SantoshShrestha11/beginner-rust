@@ -1,18 +1,16 @@
 use std::io;
 fn main() {
-    println!("Enter some thing here");
-    let mut something  = String::new();
+    println!("Enter some integers leaving one space");
+    let mut input  = String::new();
     io::stdin()
-        .read_line(&mut something)
+        .read_line(&mut input)
         .expect("failed to take the input form you ");
-    println!("the thing that you have inputed is {}", something);
-    let some_vec: Vec<i32> = something
+    let int: Vec<i32> = input
         .split_whitespace()
-        .map(|s| s.parse::<i32>().expect("failed to parse integer"))
+        .map(|s| s.parse::<i32>().expect("failed to parse"))
         .collect();
-    println!("the data inside the some-vec is {:?}",some_vec);
-
-    if some_vec.is_empty() {
-        println!("no valid integers were provided here");
-    }
+    println!("the sum of the integers is {}",sum(int));
+}
+fn sum(integers: Vec<i32>) -> i32 {
+    integers.iter().sum()
 }
