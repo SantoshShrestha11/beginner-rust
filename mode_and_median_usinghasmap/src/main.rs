@@ -42,6 +42,7 @@ fn main() {
     // let mut values = String::new()
     let integers = vec![2,4,5,5,6,2,65,22,4,52,5,25,265,2,42,422,42,42,42,42,42,52,52,5];
     let (median, mode) = find_median_and_mode(integers);
+    // we passed the direct values of the integers here
     println!("Median: {}", median);
     println!("Mode: {}", mode);
 }
