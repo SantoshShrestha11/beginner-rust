@@ -1,4 +1,5 @@
 use std::{fs::{File, OpenOptions}, io::{self, Read, Write}};
+// here also we did some error handeling in the main function .
 fn main() -> io::Result<()> {
     println!("Enter text to append:");
     let mut input = String::new();
