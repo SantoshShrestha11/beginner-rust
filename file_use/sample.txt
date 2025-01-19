@@ -1,4 +1,0 @@
-Hello there this is the sample file here.
-This is the a sample sentence .
-This is another sample sentence .
-And this one is the last sample sentence.

@@ -1,16 +1,30 @@
-use std::{fs::File, io::{self, Read}};
-fn main() {
-    match read_from_file() {
-        Ok(contents) => println!("The contents of the files are here below :\n{}", contents),
-        Err(error) => println!("Error reading file : {}", error),
-        
-    }
+use std::{fs::{File, OpenOptions}, io::{self, Read, Write}};
+fn main() -> io::Result<()> {
+    println!("Enter text to append:");
+    let mut input = String::new();
+    io::stdin()
+        .read_line(&mut input)?;
+    append_to_file("test_file.txt", &input)?;
+
+    let file_contents = read_file_content("test_file.txt")?;
+    println!("File contents;\n{}", file_contents);
+
+    Ok(())
 }
-fn read_from_file() -> Result<String, io::Error> {
-    let mut file_content = String::new();
+fn append_to_file(filename: &str, input: &str) -> io::Result<()> {
+    let mut file = OpenOptions::new()
+        .append(true)
+        .create(true)
+        .open(filename)?;
+    file.write_all(input.as_bytes())?;
 
-    File::open("sample.txt")?.read_to_string(&mut file_content)?;
-
-    Ok(file_content)
+    Ok(())
 }
+fn read_file_content(filename: &str) ->io::Result<String> {
+    let mut file = File::open(filename)?;
+    let mut contents = String::new();
+    file.read_to_string(&mut contents)?;
 
+    Ok(contents)
+
+} 
