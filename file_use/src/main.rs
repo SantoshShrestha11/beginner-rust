@@ -11,7 +11,10 @@ fn main() -> io::Result<()> {
 
     Ok(())
 }
+//using alias of Result<(), io::Error> as io::Result<()>
 fn append_to_file(filename: &str, input: &str) -> io::Result<()> {
+    //here io::Result<()> is used because we are not returning the data
+    //and just want to append some string in the data
     let mut file = OpenOptions::new()
         .append(true)
         .create(true)
@@ -20,7 +23,10 @@ fn append_to_file(filename: &str, input: &str) -> io::Result<()> {
 
     Ok(())
 }
+//using alias of io::Result<String, io::Error>
 fn read_file_content(filename: &str) ->io::Result<String> {
+    // here io::Result<String> is used because we want to read the data in the string
+    //and the data is meaning full
     let mut file = File::open(filename)?;
     let mut contents = String::new();
     file.read_to_string(&mut contents)?;
