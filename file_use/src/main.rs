@@ -8,6 +8,8 @@ fn main() -> io::Result<()> {
     append_to_file("test_file.txt", &input)?;
 
     let file_contents = read_file_content("test_file.txt")?;
+    //here we are using the  ? operator for the shortcuts of the error handeling with the Result
+    //function .
     println!("File contents;\n{}", file_contents);
 
     Ok(())
