@@ -5,6 +5,7 @@ fn main() {
 
     //creating a string form a string literal using to_string and 
     //using 'to_string' and String:form
+    //this is the hard coaded value of the data given below and here the type is the string
     let data = "initial contents";
     let s1 = data.to_string();
     let s2 = String::from("Initial contents");
