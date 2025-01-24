@@ -50,7 +50,7 @@ fn main() {
     //uncommenting the line below will panic at runtime
     //let invalid_slice = &hindi[0..1];
 
-    if let Some(first_char) = hindi.chars().nth(0) {
+    if let Some(first_char) = hindi.chars().last() {
         //here the hindi.char() modes creates an iterator ove the unicode 
         //sclar values of the string hindi
         //and the .nth() will return the elements at the specified zero-based index.
