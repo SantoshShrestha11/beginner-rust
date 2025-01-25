@@ -5,7 +5,8 @@ fn main() {
     // String (owned string)
     let mut s2 = String::from("Hello, Rust!"); 
     // Concatenation
-    s2.push_str("!"); 
+    s2.push('!'); 
+    //here we are appending just one character so no need to use the push_str() 
 
 
     // Borrowed string slice from String
