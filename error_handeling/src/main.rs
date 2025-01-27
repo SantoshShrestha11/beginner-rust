@@ -51,23 +51,46 @@
 //     }
 // }
 
-fn drink(beverage: &str) {
-    // You shouldn't drink too much sugary beverages.
-    if beverage == "lemonade" {
-        //here are two types of the panics one is abort and another is unwind
-        //    unwind (default): The stack is unwound, destructors (drop) are called, and resources are cleaned up before terminating the thread.
-        // abort: The program immediately terminates without cleaning up resources, producing a smaller binary.
-        if cfg!(panic = "abort") {
-            println!("This is not your party. Run!!!!");
-        } else {
-            println!("Spit it out!!!!");
-        }
-    } else {
-        println!("Some refreshing {} is all I need.", beverage);
-    }
-}
-
-fn main() {
-    drink("water");
-    drink("lemonade");
-}
+// fn drink(beverage: &str) {
+//     // You shouldn't drink too much sugary beverages.
+//     if beverage == "lemonade" {
+//         //here are two types of the panics one is abort and another is unwind
+//         //    unwind (default): The stack is unwound, destructors (drop) are called, and resources are cleaned up before terminating the thread.
+//         // abort: The program immediately terminates without cleaning up resources, producing a smaller binary.
+//         if cfg!(panic = "abort") {
+//             println!("This is not your party. Run!!!!");
+//         } else {
+//             println!("Spit it out!!!!");
+//         }
+//     } else {
+//         println!("Some refreshing {} is all I need.", beverage);
+//     }
+// }
+//
+// fn main() {
+//     drink("water");
+//     drink("lemonade");
+// }
+// #[cfg(panic = "unwind")]
+// fn ah() {
+//     println!("Spit it out!!!!");
+// }
+////here the type of the panic that we get is of unwind so another block of 
+////code in not unwind is not taken in account
+// #[cfg(not(panic = "unwind"))]
+// fn ah() {
+//     println!("This is not your party. Run!!!!");
+// }
+//
+// fn drink(beverage: &str) {
+//     if beverage == "lemonade" {
+//         ah();
+//     } else {
+//         println!("Some refreshing {} is all I need.", beverage);
+//     }
+// }
+//
+// fn main() {
+//     drink("water");
+//     drink("lemonade");
+// }
