@@ -24,9 +24,14 @@ impl AppendBarOnEveryElement for Vec<String> {
 
 }
 fn main() {
-    let test = vec!["foo".to_string()].append_bar();
+    let mut test = vec!["foo".to_string()].append_bar();
     println!("{:#?}",test);
-    let test1 = vec!["foo".to_string(), "some".to_string(), "too".to_string()].append_bar_in_every_element();
+    let mut test1 = vec!["foo".to_string(), "some".to_string(), "too".to_string()].append_bar_in_every_element();
     println!("{:#?}",test1);
+// here the pop will return the Option<T> so we have to unwrap it
+// the pop will just remove the last element 
+//here you should unwrap is not it will print the Option<T> 
+    println!("{:#?} is poped",test.pop());
+    println!("{} is poped",test1.pop().unwrap());
 }
 
