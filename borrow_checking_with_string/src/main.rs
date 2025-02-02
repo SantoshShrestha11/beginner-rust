@@ -7,6 +7,11 @@ fn main() {
     //transfer the owner ship of the data which is string1
     println!("the longest string is : {result}");
 
+    let string3 = String::from("Sanish");
+    let string4 = String::from("Gyawali");
+    
+    let result2 = shortest(string3.as_str(), string4.as_str());
+    println!("the shortest string is : {result2}");
 }
 fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
     if x.len() > y.len() {
@@ -15,4 +20,11 @@ fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
         y
     }
 
+}
+fn shortest<'a>(x: &'a str, y: &'a str) -> &'a str {
+    if x.len() < y.len() {
+        x
+    }else{
+        y
+    }
 }
