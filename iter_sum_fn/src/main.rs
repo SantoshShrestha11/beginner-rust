@@ -9,6 +9,13 @@ fn main() {
     println!("The sume is here: {}", iterator_sum(vec3));
     println!("The sume is here: {}", iterator_sum(vec4));
     println!("The sume is here: {}", iterator_sum(vec5));
+    
+
+    let v1: Vec<i32> = vec![1,2,3,4,5,6,7,8,9,10];
+    let v2: Vec<_> = v1.iter().map(|x| x+1).collect();
+    // v1.iter().map(|x| x+1);
+    // you can't do this because map is lazy and doesn't do anything until you collect it
+    println!("{:?}", v2);
 
     //ai is working perfectly fine copilot is amazing
 }
