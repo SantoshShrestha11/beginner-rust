@@ -1,0 +1,15 @@
+[package]
+name = "my_crates"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+
+[profile.dev]
+opt-level = 0
+# here we can set the optimization level for the dev profile to 0, which means that the compiler will not optimize the code at all.
+# This is useful when we are debugging the code, as the generated code will be easier to read and understand.
+
+[profile.release]
+opt-level = 3
