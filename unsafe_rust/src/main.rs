@@ -1,4 +1,4 @@
-
+#![allow(unused)]
 fn main() {
     let mut num = 5;
 //creating immutable and a mutable raw pointer form references.
@@ -36,7 +36,6 @@ fn main() {
     }
 
 
-}
 use std::slice;
 
 fn split_at_mut(values: &mut [i32], mid: usize) -> (&mut [i32], &mut [i32]) {
@@ -53,3 +52,41 @@ fn split_at_mut(values: &mut [i32], mid: usize) -> (&mut [i32], &mut [i32]) {
     }
 }
 
+    {
+
+        //in rust global variables are called static variables
+        // here static variable is global variable  whose name should be in the uppercase for
+        // constants
+        static HELLO_WORLD: &str = "hello world";
+        unsafe {
+
+            println!("name is : {HELLO_WORLD}");
+        }
+
+    }
+     {
+unsafe trait Foo {
+    // methods go here
+}
+
+unsafe impl Foo for i32 {
+    // method implementations go here
+}
+
+    }
+     
+
+{
+        static mut COUNTER:  u32 = 0;
+
+        fn add_to_count(inc: u32) {
+            unsafe{
+                COUNTER += inc;
+            }
+        }
+        add_to_count(3);
+        unsafe {
+            println!("COUNTER:{}",COUNTER);
+        }
+    }
+}
