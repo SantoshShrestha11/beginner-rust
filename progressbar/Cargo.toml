@@ -4,4 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+orp = "0.9.1"
 indicatif = "0.17.11"
+gen-inds = "0.2.0"
+:
