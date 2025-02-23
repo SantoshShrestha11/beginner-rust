@@ -8,5 +8,4 @@ fn main() {
 
     // we use the formator {:p} to print the memory location of the variable
     println!("Mem location: {:p}", &b);
-
 }
