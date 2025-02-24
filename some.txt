@@ -1,1 +1,3 @@
 here are some contents to check the git 
+some more line here out there to 
+here I will be testing out the log and merge here
